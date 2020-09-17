@@ -9,7 +9,7 @@
 /coverage
 
 # production
-/build
+# /build
 
 # misc
 .DS_Store
@@ -23,5 +23,4 @@ yarn-debug.log*
 yarn-error.log*
 
 package-lock.json
-/theme
-README.md
+
