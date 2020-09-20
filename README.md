@@ -13,8 +13,8 @@ Tech-Stack:
   - JWT Auth
 
   Frontend:
-  -React
-  -Redux
+  - React
+  - Redux
   
   Testing: 
   - Postman
