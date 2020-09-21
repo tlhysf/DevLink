@@ -22,6 +22,7 @@ app.use(fileUpload());
 mongoose
 	.connect(keys.mongoURI, {
 		useNewUrlParser: true,
+		ssl: true,
 		useUnifiedTopology: true,
 	})
 	.then(() => {
