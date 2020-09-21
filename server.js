@@ -20,7 +20,7 @@ app.use(bodyParser.json());
 app.use(fileUpload());
 
 mongoose
-	.connect(keys.mongoURI, {
+	.connect(keys.mongoURI || process.env.MONGO_URI, {
 		useNewUrlParser: true,
 		ssl: true,
 		useUnifiedTopology: true,
