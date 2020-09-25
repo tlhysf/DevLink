@@ -20,16 +20,16 @@ app.use(bodyParser.json());
 app.use(fileUpload());
 
 mongoose
-	.connect(
-		'mongodb://talha123:talha123@cluster0-shard-00-00.mt31b.mongodb.net:27017,cluster0-shard-00-01.mt31b.mongodb.net:27017,cluster0-shard-00-02.mt31b.mongodb.net:27017/test?ssl=true&replicaSet=atlas-h63uxy-shard-0&authSource=admin&retryWrites=true&w=majority',
-		{
-			useNewUrlParser: true,
-		}
-	)
+	.connect(keys.mongoURI, {
+		useNewUrlParser: true,
+	})
 	.then(() => {
 		console.log('MongoDB successfully connected');
 	})
-	.catch((err) => console.log(err));
+	.catch((err) => {
+		console.log(err);
+		console.log(keys.mongoURI);
+	});
 
 app.use(passport.initialize());
 
