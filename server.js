@@ -20,11 +20,12 @@ app.use(bodyParser.json());
 app.use(fileUpload());
 
 mongoose
-	.connect(keys.mongoURI || process.env.MONGO_URI, {
-		useNewUrlParser: true,
-		ssl: true,
-		useUnifiedTopology: true,
-	})
+	.connect(
+		'mongodb://talha123:talha123@cluster0-shard-00-00.mt31b.mongodb.net:27017,cluster0-shard-00-01.mt31b.mongodb.net:27017,cluster0-shard-00-02.mt31b.mongodb.net:27017/test?ssl=true&replicaSet=atlas-h63uxy-shard-0&authSource=admin&retryWrites=true&w=majority',
+		{
+			useNewUrlParser: true,
+		}
+	)
 	.then(() => {
 		console.log('MongoDB successfully connected');
 	})
